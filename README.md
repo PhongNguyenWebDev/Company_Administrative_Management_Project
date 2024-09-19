@@ -1,0 +1,1 @@
+# laravel_inventory_management
