@@ -1,20 +1,21 @@
-var toggleSearchElement = document.getElementById("toggleSearch");
-if (toggleSearchElement) {
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleSearchElement = document.getElementById("toggleSearch");
+    const searchForm = document.querySelector(".form-inline");
+
+    if (!toggleSearchElement) {
+        console.error("Toggle search element not found.");
+        return;
+    }
+
+    if (!searchForm) {
+        console.error("Search form element not found.");
+        return;
+    }
+
     toggleSearchElement.addEventListener("click", function () {
-        var searchForm = document.querySelector(".form-inline");
-        if (searchForm) {
-            if (searchForm.style.display === "none") {
-                searchForm.style.display = "block";
-            } else {
-                searchForm.style.display = "none";
-            }
-        } else {
-            console.error("Search form element not found.");
-        }
+        searchForm.classList.toggle("hidden");
     });
-} else {
-    console.error("Toggle search element not found.");
-}
+});
 
 // user and role
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th9 19, 2024 lúc 06:31 AM
+-- Thời gian đã tạo: Th10 10, 2024 lúc 03:53 PM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.3.1
 
@@ -51,11 +51,11 @@ CREATE TABLE `assets` (
 --
 
 INSERT INTO `assets` (`id`, `name`, `category_id`, `location_id`, `condition_id`, `notes`, `manufacture_id`, `model_id`, `serial`, `date`, `warranty_months`, `price`, `supplier_id`, `is_added`, `created_at`, `updated_at`) VALUES
-(1, 'ABC123', 4, 65, 2, 'OK OK', 8, 7, '112BBC', '2024-07-13', 3, 15250000.00, 7, 1, '2024-07-21 11:36:26', '2024-07-25 02:53:35'),
-(2, 'PHong', 5, 54, 4, 'sddsv', 6, 7, '112BBC', '2024-07-20', 1, 15000000.00, 11, 1, '2024-07-22 00:56:39', '2024-07-24 05:12:10'),
-(3, 'Asset 1', 1, 60, 1, 'This is a sample asset', 1, 1, 'ABC123', '2022-01-01', 12, 45000000.00, 1, 1, '2024-07-22 00:56:53', '2024-07-25 19:46:58'),
+(1, 'ABC123', 4, 65, 2, 'OK OK', 8, 7, '112BBC', '2024-07-13', 3, 15250000.00, 7, 1, '2024-07-21 11:36:26', '2024-11-10 08:52:19'),
+(2, 'PHong', 5, 54, 4, 'sddsv', 6, 7, '112BBC', '2024-07-20', 1, 15000000.00, 11, 0, '2024-07-22 00:56:39', '2024-11-10 08:52:14'),
+(3, 'Asset 1', 1, 60, 1, 'This is a sample asset', 1, 1, 'ABC123', '2022-01-01', 12, 45000000.00, 1, 0, '2024-07-22 00:56:53', '2024-09-18 23:41:11'),
 (4, 'Asset 2', 2, 70, 2, 'Another sample asset', 2, 2, 'DEF456', '2022-02-01', 3, 36000000.00, 2, 0, '2024-07-22 00:56:53', '2024-07-22 00:56:53'),
-(5, 'Asset 3', 3, 53, 3, 'Yet another sample asset', 3, 3, 'GHI789', '2022-03-01', 6, 10000000.00, 3, 1, '2024-07-22 00:56:53', '2024-07-24 05:09:21');
+(5, 'Asset 3', 3, 53, 3, 'Yet another sample asset', 3, 3, 'GHI789', '2022-03-01', 6, 10000000.00, 3, 0, '2024-07-22 00:56:53', '2024-11-10 08:52:16');
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";s:1:\"j\";s:11:\"description\";}s:11:\"permissions\";a:16:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:9:\"view user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:2;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:3;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"view role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:3:{i:0;i:1;i:1;i:2;i:2;i:5;}}i:5;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:2;i:1;i:5;}}i:6;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:2;i:1;i:5;}}i:7;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:13:\"view location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:9;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:15:\"create location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:10;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:13:\"edit location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:15:\"delete location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:12;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:10:\"view asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}}i:13;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:12:\"create asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:10:\"edit asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:12:\"delete asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}}s:5:\"roles\";a:4:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"admin\";s:1:\"j\";N;s:1:\"c\";s:3:\"web\";}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"super-admin\";s:1:\"j\";N;s:1:\"c\";s:3:\"web\";}i:2;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"Test Role\";s:1:\"j\";s:4:\"AAAA\";s:1:\"c\";s:3:\"web\";}i:3;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Employee\";s:1:\"j\";s:3:\"AAA\";s:1:\"c\";s:3:\"web\";}}}', 1722048708);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:5:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";s:1:\"j\";s:11:\"description\";}s:11:\"permissions\";a:16:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:9:\"view user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:2;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:3;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"view role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:3:{i:0;i:1;i:1;i:2;i:2;i:5;}}i:5;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:2;i:1;i:5;}}i:6;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:2;i:1;i:5;}}i:7;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:13:\"view location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:9;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:15:\"create location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:10;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:13:\"edit location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:15:\"delete location\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:12;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:10:\"view asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}}i:13;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:12:\"create asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:10:\"edit asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:12:\"delete asset\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}}s:5:\"roles\";a:4:{i:0;a:4:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"admin\";s:1:\"j\";N;s:1:\"c\";s:3:\"web\";}i:1;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"super-admin\";s:1:\"j\";N;s:1:\"c\";s:3:\"web\";}i:2;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"Test Role\";s:1:\"j\";s:4:\"AAAA\";s:1:\"c\";s:3:\"web\";}i:3;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:8:\"Employee\";s:1:\"j\";s:3:\"AAA\";s:1:\"c\";s:3:\"web\";}}}', 1731339457);
 
 -- --------------------------------------------------------
 
@@ -296,7 +296,8 @@ CREATE TABLE `jobs` (
 INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `available_at`, `created_at`) VALUES
 (1, 'default', '{\"uuid\":\"4d0ce694-46be-418e-97a4-224692bc374b\",\"displayName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"command\":\"O:32:\\\"App\\\\Jobs\\\\ResendVerificationEmail\\\":2:{s:7:\\\"\\u0000*\\u0000user\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";i:1;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:5:\\\"delay\\\";O:25:\\\"Illuminate\\\\Support\\\\Carbon\\\":3:{s:4:\\\"date\\\";s:26:\\\"2024-07-16 03:06:06.355867\\\";s:13:\\\"timezone_type\\\";i:3;s:8:\\\"timezone\\\";s:3:\\\"UTC\\\";}}\"}}', 0, NULL, 1721099166, 1721099106),
 (2, 'default', '{\"uuid\":\"3f6fea68-2068-48c4-a45b-fb6a80826b51\",\"displayName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"command\":\"O:32:\\\"App\\\\Jobs\\\\ResendVerificationEmail\\\":2:{s:7:\\\"\\u0000*\\u0000user\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";i:1;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:5:\\\"delay\\\";O:25:\\\"Illuminate\\\\Support\\\\Carbon\\\":3:{s:4:\\\"date\\\";s:26:\\\"2024-07-18 04:15:35.916524\\\";s:13:\\\"timezone_type\\\";i:3;s:8:\\\"timezone\\\";s:3:\\\"UTC\\\";}}\"}}', 0, NULL, 1721276135, 1721276076),
-(3, 'default', '{\"uuid\":\"462e1b4b-54a1-4cac-ab21-1937869dc792\",\"displayName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"command\":\"O:32:\\\"App\\\\Jobs\\\\ResendVerificationEmail\\\":2:{s:7:\\\"\\u0000*\\u0000user\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";i:8;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:5:\\\"delay\\\";O:25:\\\"Illuminate\\\\Support\\\\Carbon\\\":3:{s:4:\\\"date\\\";s:26:\\\"2024-07-22 07:42:37.128413\\\";s:13:\\\"timezone_type\\\";i:3;s:8:\\\"timezone\\\";s:3:\\\"UTC\\\";}}\"}}', 0, NULL, 1721634157, 1721634098);
+(3, 'default', '{\"uuid\":\"462e1b4b-54a1-4cac-ab21-1937869dc792\",\"displayName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"command\":\"O:32:\\\"App\\\\Jobs\\\\ResendVerificationEmail\\\":2:{s:7:\\\"\\u0000*\\u0000user\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";i:8;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:5:\\\"delay\\\";O:25:\\\"Illuminate\\\\Support\\\\Carbon\\\":3:{s:4:\\\"date\\\";s:26:\\\"2024-07-22 07:42:37.128413\\\";s:13:\\\"timezone_type\\\";i:3;s:8:\\\"timezone\\\";s:3:\\\"UTC\\\";}}\"}}', 0, NULL, 1721634157, 1721634098),
+(4, 'default', '{\"uuid\":\"934fdaaf-90ef-4aad-8a9a-c056d044faac\",\"displayName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"job\":\"Illuminate\\\\Queue\\\\CallQueuedHandler@call\",\"maxTries\":null,\"maxExceptions\":null,\"failOnTimeout\":false,\"backoff\":null,\"timeout\":null,\"retryUntil\":null,\"data\":{\"commandName\":\"App\\\\Jobs\\\\ResendVerificationEmail\",\"command\":\"O:32:\\\"App\\\\Jobs\\\\ResendVerificationEmail\\\":2:{s:7:\\\"\\u0000*\\u0000user\\\";O:45:\\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\\":5:{s:5:\\\"class\\\";s:15:\\\"App\\\\Models\\\\User\\\";s:2:\\\"id\\\";i:10;s:9:\\\"relations\\\";a:0:{}s:10:\\\"connection\\\";s:5:\\\"mysql\\\";s:15:\\\"collectionClass\\\";N;}s:5:\\\"delay\\\";O:25:\\\"Illuminate\\\\Support\\\\Carbon\\\":3:{s:4:\\\"date\\\";s:26:\\\"2024-09-19 06:40:19.044444\\\";s:13:\\\"timezone_type\\\";i:3;s:8:\\\"timezone\\\";s:3:\\\"UTC\\\";}}\"}}', 0, NULL, 1726728019, 1726727960);
 
 -- --------------------------------------------------------
 
@@ -663,7 +664,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('Zh3XQuQeMLHSV4CEMP2uAzHuWYno1zXkA7K1bW2a', '1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0', 'YTo1OntzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2xvZ2luIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo2OiJfdG9rZW4iO3M6NDA6IjNHU1MyaGVnMmNDMnNGMVNIZFZsZFNxSFRycVg1Wmo1bzdITktucEIiO3M6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czo5OiJ1c2VyX25hbWUiO3M6MjE6Ik5ndXnhu4VuIFR14bqlbiBQaG9uZyI7fQ==', 1721967513);
+('AYO6FVeYDjrMwCSnfG68LzYilVSNuLvIFB31gnMt', '1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicEtYZmVSWkJVR25oVGNmY25WemRYR1NnZXhKNVJFMmw5VndEUzhDSyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6OTQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zaG93LXByaW50P2Fzc2V0X2NvZGU9MiZhc3NldF9uYW1lPTEmZGF0ZV9wdXJjaGFzZWQ9MyZ0ZW1wbGF0ZT10ZW1wbGF0ZTEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6OToidXNlcl9uYW1lIjtzOjIxOiJOZ3V54buFbiBUdeG6pW4gUGhvbmciO30=', 1731253951);
 
 -- --------------------------------------------------------
 
@@ -729,7 +730,8 @@ INSERT INTO `users` (`id`, `location_id`, `name`, `company`, `email`, `phone`, `
 (1, 100, 'Nguyễn Tuấn Phong', 'Apps Cyclone', 'phong@gmail.com', NULL, 1, '2024-07-17 21:14:42', '$2y$12$6D3qp4zIuiT42pXmq5m0meBQRJsKxd520.3svX8UPyrYB2UKDOh8m', 1, NULL, '2024-07-17 21:14:26', '2024-07-17 21:14:42'),
 (7, 60, 'Phạm Nhi', 'fpoly', 'ptn3221@gmail.com', '+84328414771', 1, NULL, '$2y$12$rBBQlvEgQ4sZ5oUzLrIA5eBrBTSbsG0Gdsirjw95eplCSVTgfm0rC', 1, NULL, '2024-07-18 02:51:11', '2024-07-22 00:24:29'),
 (8, NULL, 'Nguyễn Tuấn Phong', 'Apps Cyclone', 'phong123@gmail.com', NULL, 1, '2024-07-22 00:41:55', '$2y$12$jydjKy/90j8SDLEf8Se2re/JuTmlV/hhHXLzQ46DyYiVlfiiY8K9i', 1, NULL, '2024-07-22 00:41:30', '2024-07-22 00:41:55'),
-(9, 63, 'Phạm Nhi', 'fpoly', 'pppp@gmail.com', '03056156185', 1, NULL, '$2y$12$ohkszdBwOe4r0xhJWovOQ.a.yRVmM9KFQlDnQoRgJlwqLbIC9lN..', 1, NULL, '2024-07-25 19:55:32', '2024-07-25 19:57:26');
+(9, 63, 'Phạm Nhi', 'fpoly', 'pppp@gmail.com', '03056156185', 1, NULL, '$2y$12$ohkszdBwOe4r0xhJWovOQ.a.yRVmM9KFQlDnQoRgJlwqLbIC9lN..', 1, NULL, '2024-07-25 19:55:32', '2024-07-25 19:57:26'),
+(10, NULL, 'Phạm Nhi', 'Apps Cyclone', 'phong445@gmail.com', NULL, 1, NULL, '$2y$12$CeAc3UGlmjkSgFF/rsb67OHe6dIUNBLf/BtLWnNO5n5CJL8lbq75C', 1, NULL, '2024-09-18 23:39:07', '2024-09-18 23:39:07');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -937,7 +939,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT cho bảng `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `locations`
@@ -985,7 +987,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

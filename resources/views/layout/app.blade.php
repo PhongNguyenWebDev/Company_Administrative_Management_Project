@@ -54,6 +54,8 @@
         var resizefunc = [];
     </script>
     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
@@ -65,24 +67,16 @@
     <script src="{{ asset('assets/js/waves.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.scrollTo.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script> --}}
     <!-- Counter js -->
     <script src="{{ asset('assets/plugins/waypoints/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/counterup/jquery.counterup.min.js') }}"></script>
-    <!--Morris Chart-->
-    <script src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/raphael/raphael-min.js') }}"></script>
-    <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('assets/js/index.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/morris.js@0.5.1/dist/morris.min.js"></script>
-    <!-- Include Morris.js -->
-
-    <!-- Dashboard init -->
-    <script src="{{ asset('assets/pages/jquery.dashboard.js') }}"></script>
     <!-- App js -->
     <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.app.js') }}"></script>
+
 </body>
 
 </html>

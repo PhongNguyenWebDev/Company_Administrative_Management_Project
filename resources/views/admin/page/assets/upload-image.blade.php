@@ -29,23 +29,26 @@
                             data-bs-toggle="modal">X</span>
                     </div>
                 </div>
-                <img src="{{ asset('storage/images/' . $images->first()->file_name) }}" alt="Photo" id="mainPhoto">
+                <img src="{{ asset('storage/images/' . $images->first()->file_name) }}" loading="lazy" alt="Photo"
+                    id="mainPhoto">
             </div>
             <div class="d-flex align-items-center justify-content-between">
                 {{-- @if (isset($check)) --}}
                 <a class="text-center" id="prevBtn" onclick="changePhoto(-1)">
-                    <img class="w-25 text-center" src="{{ asset('assets/images/icons/left-chevron.png') }}"
-                        alt="" srcset="">
+                    <img class="w-25 text-center" loading="lazy"
+                        src="{{ asset('assets/images/icons/left-chevron.png') }}" alt="" srcset="">
                 </a>
                 <div id="thumbnails" class="d-flex justify-content-between mx-2">
                     @foreach ($images->take(4) as $index => $image)
                         <img src="{{ asset('storage/images/' . $image->file_name) }}" alt="Image"
-                            class="img-thumbnail thumbnail" style="width: 30%" data-index="{{ $index }}">
+                            class="img-thumbnail thumbnail" loading="lazy" style="width: 30%"
+                            data-index="{{ $index }}">
                     @endforeach
 
                 </div>
                 <a class="text-center" id="nextBtn" onclick="changePhoto(1)"><img class="w-25"
-                        src="{{ asset('assets/images/icons/chevron.png') }}" alt="" srcset=""></a>
+                        src="{{ asset('assets/images/icons/chevron.png') }}" loading="lazy" alt=""
+                        srcset=""></a>
             </div>
         @endif
         <div class="my-3">
