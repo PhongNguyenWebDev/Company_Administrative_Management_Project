@@ -25,8 +25,9 @@
                 <li class="nav-item dropdown user-box">
                     <a href="#" class="nav-link dropdown-toggle waves-effect waves-light user-link"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/images/users/avatar-1.jpg" alt="user-img"
+                        <img loading="lazy" src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-img"
                             class="img-fluid img-circle rounded-circle user-img">
+
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li>
@@ -36,12 +37,8 @@
                                 @endif
                             </h5>
                         </li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti-user m-r-5"></i> Profile</a>
-                        </li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti-settings m-r-5"></i>
-                                Settings</a></li>
-                        <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti-lock m-r-5"></i> Lock
-                                screen</a></li>
+                        {{-- <li><a href="javascript:void(0)" class="dropdown-item"><i class="ti-user m-r-5"></i> Profile</a>
+                        </li> --}}
                         <li><a href="{{ route('logout') }}" class="dropdown-item"><i class="ti-power-off m-r-5"></i>
                                 Logout</a></li>
                     </ul>

@@ -67,41 +67,84 @@ class QrCodeController extends Controller
 
     public function showPrint(Request $request)
     {
+        // Lấy tất cả các giá trị từ request
         $selectedFields = $request->all();
-        $assets = Asset::all();
+
+        // Sử dụng eager loading để tối ưu hóa truy vấn
+        $assets = Asset::with(['supplier', 'model', 'location.departments'])
+            ->where('is_added', 1)
+            ->get();
+
+        // Mảng cấu hình các field có thể hiển thị
+        $fieldMapping = [
+            1 => 'asset_name',
+            2 => 'asset_code',
+            3 => 'date_purchased',
+            4 => 'warranty',
+            5 => 'vendor',
+            6 => 'model_serial',
+            7 => 'loca_depart',
+        ];
+
+        // Khởi tạo mảng để chứa dữ liệu tài sản
         $assetsData = [];
+
         foreach ($assets as $item) {
-            if ($item->is_added === 1) {
-                if (in_array(1, $selectedFields)) {
-                    $assetData['asset_name'] = $item->name;
+            $assetData = [];
+
+            // Dùng foreach để kiểm tra các field cần hiển thị
+            foreach ($selectedFields as $field) {
+                if (array_key_exists($field, $fieldMapping)) {
+                    $fieldName = $fieldMapping[$field];
+
+                    // Gán giá trị tương ứng vào assetData
+                    switch ($field) {
+                        case 1:
+                            $assetData[$fieldName] = $item->name;
+                            break;
+                        case 2:
+                            $assetData[$fieldName] = $item->id;
+                            break;
+                        case 3:
+                            $assetData[$fieldName] = $item->date;
+                            break;
+                        case 4:
+                            $assetData[$fieldName] = $item->warranty_months;
+                            break;
+                        case 5:
+                            $assetData[$fieldName] = $item->supplier ? $item->supplier->name : null;
+                            break;
+                        case 6:
+                            $assetData[$fieldName] = $item->model ? $item->model->name . '/' . $item->serial : null;
+                            break;
+                        case 7:
+                            $assetData[$fieldName] = $item->location && $item->location->departments
+                                ? $item->location->location_name . '/' . $item->location->departments->name
+                                : null;
+                            break;
+                    }
                 }
-                if (in_array(2, $selectedFields)) {
-                    $assetData['asset_code'] = $item->id;
-                }
-                if (in_array(3, $selectedFields)) {
-                    $assetData['date_purchased'] = $item->date;
-                }
-                if (in_array(4, $selectedFields)) {
-                    $assetData['warranty'] = $item->warranty_months;
-                }
-                if (in_array(5, $selectedFields)) {
-                    $assetData['vendor'] = $item->supplier->name;
-                }
-                if (in_array(6, $selectedFields)) {
-                    $assetData['model_serial'] = $item->model->name . '/' . $item->serial;
-                }
-                if (in_array(7, $selectedFields)) {
-                    $assetData['loca_depart'] = $item->location->location_name . '/' . $item->location->departments->name;
-                }
+            }
+
+            // Nếu assetData có dữ liệu thì thêm vào mảng assetsData
+            if (!empty($assetData)) {
                 $assetsData[] = $assetData;
             }
         }
-        // QR code
-        $url = route('show.info.qrcode', ['id' => $item->id]);
-        $qrCode = QrCode::size(100)->generate($url);
 
+        // QR code cho bản ghi cuối cùng (nếu có)
+        $qrCode = null;
+        if ($assets->isNotEmpty()) {
+            $lastItem = $assets->last();
+            $url = route('show.info.qrcode', ['id' => $lastItem->id]);
+            $qrCode = QrCode::size(100)->generate($url);
+        }
+
+        // Trả về view với dữ liệu cần thiết
         return view('admin.page.qrcode.print-templates.list-print', compact('assetsData', 'selectedFields', 'qrCode'));
     }
+
+
     public function showInfoQr(Request $request, $id)
     {
         $assets = Asset::findOrFail($id);

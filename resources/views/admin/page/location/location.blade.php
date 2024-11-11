@@ -78,7 +78,7 @@
                 </table>
             </div>
             <div class="d-flex justify-content-center">
-                {{ $locations->appends(['query' => $query])->links('pagination.custom') }}
+                {{ $locations->appends(['query' => request()->query('query')])->links('pagination.custom') }}
             </div>
         </section>
     </section>
@@ -124,9 +124,9 @@
             }
         });
 
-        function copyLocation(locationId) {
-            // Implement the copy functionality here
-        }
+        // function copyLocation(locationId) {
+        //     // Implement the copy functionality here
+        // }
         document.addEventListener('DOMContentLoaded', function() {
             @if (session('success'))
                 Swal.fire({

@@ -12,6 +12,7 @@ use App\Imports\LocationsImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Services\DepartmentDataService;
 use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 class LocationController extends Controller
 {
@@ -31,12 +32,18 @@ class LocationController extends Controller
     }
     public function index(Request $request)
     {
-        $query = $request->input('query');
-        $locations = Location::where(function ($queryBuilder) use ($query) {
-            $queryBuilder->where('location_name', 'like', '%' . $query . '%');
+        // Lấy giá trị 'query' từ request
+        $searchQuery = $request->input('query');
+
+        // Tìm kiếm theo 'location_name' với điều kiện nếu có 'query'
+        $locations = Location::when($searchQuery, function ($queryBuilder, $searchQuery) {
+            $queryBuilder->where('location_name', 'like', '%' . $searchQuery . '%');
         })->paginate(10);
-        return view('admin.page.location.location', compact('locations', 'query'));
+
+        // Truyền cả 'query' và 'locations' tới view
+        return view('admin.page.location.location', compact('locations', 'searchQuery'));
     }
+
 
     public function create(): View
     {
@@ -84,7 +91,7 @@ class LocationController extends Controller
     {
         $location = Location::findOrFail($id);
         $location->update([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'department_id' => $request->department_id,
             'location_name' => $request->location_name,
             'notes' => $request->notes,

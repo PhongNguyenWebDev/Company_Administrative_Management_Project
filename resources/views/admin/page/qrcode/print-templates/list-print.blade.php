@@ -159,12 +159,12 @@
                 @if ($selectedFields['template'] === 'template4')
                     @for ($i = 0; $i < 40; $i++)
                         @if (isset($assetsData[$i]))
-                            <div class="col-2 g-2 border p-0 bg-white h-100 mx-1" style="width:20%; position: relative;">
-                                <div class="p-2 fs-6">
-                                    <div class="position-absolute" style="top:35%; transform: translateX(-50%); left:80%">
-                                        {!! $qrCode !!}
-                                    </div>
+                            <div class="col-2 g-2 p-0 bg-white h-100 mx-1" style="width:20%; position: relative;">
+                                {{-- <div class="p-2 fs-6"> --}}
+                                <div class="d-flex justify-content-around">
+                                    {!! $qrCode !!}
                                 </div>
+                                {{-- </div> --}}
                             </div>
                         @endif
                     @endfor
