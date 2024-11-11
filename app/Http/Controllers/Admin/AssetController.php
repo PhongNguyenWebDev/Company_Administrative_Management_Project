@@ -31,11 +31,26 @@ class AssetController extends Controller
     {
         $this->departmentDataService = $departmentDataService;
     }
-    public function index(): View
+    public function index(Request $request): View
     {
-        $assets = Asset::with('location.departments')->get();
-        return view('admin.page.assets.assets-page', compact('assets'));
+        $query = $request->input('query');  // Get the search query
+
+        // If there is a query, filter assets
+        if ($query) {
+            $assets = Asset::with('location.departments')
+                ->whereHas('location.departments', function ($queryBuilder) use ($query) {
+                    // Adjust the condition to filter by relevant fields in location or departments
+                    $queryBuilder->where('department_name', 'like', '%' . $query . '%');
+                })
+                ->orWhere('name', 'like', '%' . $query . '%') // Assuming 'name' is a field of Asset
+                ->get();
+        } else {
+            $assets = Asset::with('location.departments')->get();
+        }
+
+        return view('admin.page.assets.assets-page', compact('assets', 'query'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -154,9 +169,7 @@ class AssetController extends Controller
         return redirect()->back()->with('success', 'Tất cả hình ảnh đã được tải lên thành công.');
     }
 
-    public function deleteImage($id)
-    {
-    }
+    public function deleteImage($id) {}
     /**
      * Update the specified resource in storage.
      */
